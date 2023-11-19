@@ -1,0 +1,7 @@
+{
+  "name": "VAS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
