@@ -1,0 +1,30 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ "sideMenu.Menu" | translate }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>{{ "sideMenu.Menu" | translate }}</ion-label>
+          <ion-select
+            [(ngModel)]="selectedLanguage"
+            (ionChange)="switchLanguage(selectedLanguage)"
+          >
+            <ion-select-option
+              *ngFor="let language of languages"
+              [value]="language.code"
+            >
+              <p>{{ language.name }}</p>
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <!-- Add more menu items here -->
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content"></ion-router-outlet>
+</ion-app>
